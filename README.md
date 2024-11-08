@@ -1,27 +1,50 @@
-# vite-template-redux
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+# react-redux-pokeApi
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
+  
+
+Este proyecto usa Vite, React, Redux y PokeApi para interactuar con los 151 pokemones originales.
+
+  
+
+
 
 ## Goals
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+  
+
+- Listar los 151 pokemones originales con su nombre e imagen
+- Filtrar por nombre
+- Ver los detalles (estadisticas, peso, altura) de cada pokemon
+- Agregar hasta 6 pokemones al area de combate
+
+  
 
 ## Scripts
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+  
 
-## Inspiration
+-  `dev`/`start` - start dev server and open browser
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+-  `build` - build for production
+
+-  `preview` - locally preview production build
+
+-  `test` - launch test runner
+
+ ## Mayores desafíos
+ - Usar createApi para consumir los endpoints de pokeApi
+ - Negociar entre el payload resumido y completo de los pokemones
+ - Definir los actions y reducers
+
+## TODO: mejoras
+
+- Responsividad. Mostrar más o menos columnas según el ancho de la pantalla
+- Normalizar datos en Redux para mejorar performance
+- Mutar lista de pokemones luego del fetch individual
+
+## Bugs
+
+Agregar un pokemon al area de combate desde la vista de detalle hace que se pierda la imagen. Solución ideal: usar rutas y hacer más segura la transferencia de contexto entre vistas.
+
+  
