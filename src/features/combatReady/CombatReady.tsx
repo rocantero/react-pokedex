@@ -7,8 +7,7 @@ import {
 import { Pokemon } from "../pokemon/Pokemon"
 
 export const CombatReady = () => {
-  const dispatch = useAppDispatch()
-  const combatReady = useAppSelector((state: { combatReady: Pokemon[] }) => state.combatReady)
+  const combatReady = useAppSelector((state) => state.combatReady)
   const [hasPokemons, setHasPokemons] = useState(false)
 
   useEffect(() => {
@@ -17,8 +16,8 @@ export const CombatReady = () => {
 
   return (
     
-    <div className={styles.row}>
-      <h2 className={styles.title}>Listos para el combate</h2>
+    <div className={styles.row}>``
+      <h2 className={styles.title}>Listos para el combate</h2>1``
       <div className={styles.pokemons}>
       {
       hasPokemons ?
