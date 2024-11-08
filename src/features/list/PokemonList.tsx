@@ -25,6 +25,7 @@ export const PokemonList = () => {
   const dispatch = useAppDispatch()
   const [searchTerm, setSearchTerm] = useState("")
   const [pokemons, setPokemons] = useState<PokemonLite[]>([])
+  const combatReadyList = useAppSelector((state) => state.combatReady)
   const { data, isError, isLoading, isSuccess } =
     useGetPokemonsQuery()
 
@@ -36,10 +37,13 @@ export const PokemonList = () => {
 
   useEffect(() => {
     if (data) {
-      const filteredPokemons = data.filter(pokemon => pokemon.name.includes(searchTerm))
+      const filteredPokemons = data.filter(pokemon => { 
+        
+        return pokemon.name.includes(searchTerm) && !combatReadyList.find(p => p.name === pokemon.name)
+      })
       setPokemons(filteredPokemons)
     }
-  }, [searchTerm, data])
+  }, [searchTerm, data, combatReadyList])
 
   if (isError) {
     return (
@@ -65,7 +69,7 @@ export const PokemonList = () => {
           <input
             className={styles.textbox}
             aria-label="Find a pokemon"
-            placeholder="Find a pokemon"
+            placeholder="Que pokemon buscas?"
             value={searchTerm}
             type="text"
             onChange={e => {

@@ -2,7 +2,6 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { combineReducers, combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 import combatReadyReducer from "../features/combatReady/combatReadySlice"
-import filterReducer from "../features/filter/filterSlice"
 import pokemonReducer from "../features/pokemon/pokemonSlice"
 import { pokemonApiSlice } from "../features/list/pokemonApiSlice"
 
@@ -10,7 +9,6 @@ import { pokemonApiSlice } from "../features/list/pokemonApiSlice"
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
 const rootReducer = combineReducers({
   combatReady: combatReadyReducer,
-  filter: filterReducer,
   pokemon: pokemonReducer,
   [pokemonApiSlice.reducerPath]: pokemonApiSlice.reducer
 })

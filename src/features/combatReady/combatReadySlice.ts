@@ -15,6 +15,15 @@ export const combatReadySlice = createSlice({
       }
     }),
     addPokemon: create.reducer((state, action: PayloadAction<PokemonLite>) => {
+      if (state.length === 6) {
+        alert("Solo puedes tener 6 pokemones en tu equipo")
+        return
+      }
+      const dup = state.find(p => p.name === action.payload.name)
+      if (dup) {
+        alert("No puedes tener dos pokemones iguales en tu equipo")
+        return
+      }
       state.push(action.payload)
     }),
   }),
