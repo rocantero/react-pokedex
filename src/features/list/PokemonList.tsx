@@ -65,6 +65,7 @@ export const PokemonList = () => {
           <input
             className={styles.textbox}
             aria-label="Find a pokemon"
+            placeholder="Find a pokemon"
             value={searchTerm}
             type="text"
             onChange={e => {

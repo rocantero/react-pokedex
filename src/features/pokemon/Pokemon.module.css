@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 200px;
   height: 200px;
   margin: 10px;
@@ -11,38 +12,74 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.card:hover {
+  cursor: pointer;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+
 
 .img {
   width: 100px;
   height: 100px;
+  max-height: 100%;
   margin-bottom: 10px;
+  aspect-ratio: 1/1;
 }
 
 .name {
   font-size: 1.2rem;
-  margin-bottom: 10px;
+  margin: 0;
   text-transform: capitalize;
 }
 
 .addButton {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: #444;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.addButton::after {
+  content: '+';
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .addButton:hover {
   background-color: #666;
+  cursor: pointer;
 }
 
 .removeButton {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: #fff;
   border: 1px solid #444;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.removeButton::after {
+  content: '+';
+  transform: rotate(45deg);
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+  /* font-weight: bold; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .removeButton:hover {
   background-color: #cacaca;
+  cursor: pointer;
 }

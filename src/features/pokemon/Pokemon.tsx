@@ -26,11 +26,11 @@ export const Pokemon = ({ name, url, isSelected }: PokemonProps) => {
     <div className={styles.card}>
       { isSuccess && 
       <>
-      { !isSelected && <button className={styles.addButton} onClick={() => dispatch(addPokemon({ name, url }))}>-</button> }
-      { isSelected && <button className={styles.removeButton} onClick={() => dispatch(removePokemon({ name, url }))}>-</button> }
+      { !isSelected && <button className={styles.addButton} onClick={() => dispatch(addPokemon({ name, url }))}></button> }
+      { isSelected && <button className={styles.removeButton} onClick={() => dispatch(removePokemon({ name, url }))}></button> }
       </>}
       
-      { isSuccess ? <img className="pokemon__image" src={pokemon?.sprites?.front_default} 
+      { isSuccess ? <img className={ styles.img } src={pokemon?.sprites?.other?.dream_world?.front_default} 
         onClick={() => dispatch(selectPokemon(pokemon))} /> 
       : <Spinner />
       }
