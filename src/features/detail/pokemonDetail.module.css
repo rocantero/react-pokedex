@@ -1,0 +1,51 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 24px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  max-height: 100%;
+  margin-bottom: 10px;
+  aspect-ratio: 1/1;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 16px 0 8px;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 16px 0 8px;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.buttonNav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 16px;
+  width: 80%;
+}
+
+.buttonNav button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+}

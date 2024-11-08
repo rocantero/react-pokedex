@@ -14,8 +14,10 @@ export const pokemonSlice = createSlice({
     selectPokemon: create.reducer((state, action: PayloadAction<Pokemon>) => {
       state.selectedPokemon = action.payload
       state.isSelected = true
+      
     }),
   }),
 })
+export const selectActivePokemon = (state: { activePokemon: { selectedPokemon: Pokemon | null, isSelected: boolean } }) => state.activePokemon
 export const { clearPokemon, selectPokemon } = pokemonSlice.actions
 export default pokemonSlice.reducer
